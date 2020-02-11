@@ -19,7 +19,7 @@ const Loan = ({ downpayment, loan }) => {
   const isDownpaymentValid = downpaymentPercent > minDownPercent;
 
   // Derive closing costs.
-  const closingCostMin = afford * 0.02;
+  const closingCostMin = afford * 0.015;
   const closingCostMax = afford * 0.05;
 
   return (
