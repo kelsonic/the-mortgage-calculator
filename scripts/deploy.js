@@ -21,7 +21,7 @@ const ENVIRONMENTS = {
 
 // Construct the download links for each environment.
 const DOWNLOAD_LINKS_LOOKUP = {
-  production: 'https://mortgage-calculator-1e023.firebaseapp.com\nhttps://leanlooper.com',
+  production: 'https://mortgage-calculator-1e023.firebaseapp.com\nhttps://homemortgagecalculate.com/',
 };
 
 // Construct valid version bump types.

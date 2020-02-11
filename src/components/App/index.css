@@ -21,15 +21,18 @@ h1 {
 }
 
 label {
-  color: #555555;
+  color: #424242;
   font-size: 2em;
   margin: 0 0 10px;
 }
 
 input {
   border: none;
+  border-radius: 5px;
+  color: #424242;
   font-size: 4em;
   font-weight: bold;
+  margin: 10px 0 0;
   outline: none;
   text-align: center;
 }
@@ -37,7 +40,7 @@ input {
 button {
   background: none;
   border: none;
-  color: #6464ff;
+  color: #1b95e0;
   font-size: 1em;
   text-align: center;
 }
@@ -62,4 +65,14 @@ button {
 .app.show-all h1 {
   font-size: 2em;
   margin: 0 0 50px;
+}
+
+.made-with {
+  position: absolute;
+  bottom: 5px;
+}
+
+.made-with a {
+  color: #d12026;
+  text-decoration: none;
 }

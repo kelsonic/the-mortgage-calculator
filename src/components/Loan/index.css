@@ -1,11 +1,15 @@
 .loan {
   align-items: center;
-  background: #eaeaea;
+  background: #ffffff;
+  border-radius: 5px;
   border: 1px solid #d8d8d8;
-  padding: 15px 15px 0px;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  margin: 10px;
   min-width: 350px;
+  padding: 15px 15px 0px;
+  transition: all 0.3s ease-out;
 }
 
 .loan h2 {
@@ -14,7 +18,7 @@
 }
 
 .loan a {
-  color: #0e6dff;
+  color: #1b95e0;
   font-size: 0.8rem;
   margin: -20px 0 5px;
   text-decoration: none;
@@ -28,7 +32,7 @@
 }
 
 .loan .data-point label {
-  color: #555555;
+  color: #424242;
   font-size: 1em;
   margin: 0 0 5px;
 }
@@ -47,7 +51,7 @@
 }
 
 .loan.invalid {
-  background: #ffcbcb;
+  background: #ffb9b9;
 }
 
 .loan.invalid .data-point.downpayment label {

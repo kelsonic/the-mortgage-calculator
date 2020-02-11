@@ -22,7 +22,7 @@ class App extends Component {
       monthlyIncome: 0,
       monthsUntilPurchase: 0,
       reserves: 0,
-      showField: FIELD_STATES.creditScore,
+      showField: FIELD_STATES.monthlyIncome,
     };
   }
 
@@ -141,6 +141,11 @@ class App extends Component {
             {/* <Loan downpayment={downpayment} loan={jumbo} /> */}
           </div>
         )}
+
+        <p className="made-with">
+          Made with love by <a href="https://github.com/kelsonic">Kelson Adams</a> — fork or suggest edits on{' '}
+          <a href="https://github.com/kelsonic/the-mortgage-calculator">GitHub</a>!
+        </p>
       </div>
     );
   }
