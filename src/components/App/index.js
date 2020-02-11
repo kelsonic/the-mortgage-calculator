@@ -4,7 +4,7 @@ import toNumber from 'lodash/toNumber';
 // Relative imports.
 import Loan from 'components/Loan';
 import { conforming, highBalanceConforming /* , jumbo */ } from 'loans';
-import './index.css';
+import './styles.css';
 
 const FIELD_STATES = {
   all: 'all',

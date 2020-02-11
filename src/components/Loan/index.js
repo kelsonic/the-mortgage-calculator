@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Relative imports.
-import './index.css';
+import './styles.css';
 
 const Loan = ({ downpayment, loan }) => {
   // Derive loan properties.
@@ -17,6 +17,10 @@ const Loan = ({ downpayment, loan }) => {
 
   // Derive if they are eligible for the loan.
   const isDownpaymentValid = downpaymentPercent > minDownPercent;
+
+  // Derive closing costs.
+  const closingCostMin = afford * 0.02;
+  const closingCostMax = afford * 0.05;
 
   return (
     <div className={`loan${isDownpaymentValid ? '' : ' invalid'}`}>
@@ -50,6 +54,12 @@ const Loan = ({ downpayment, loan }) => {
       <div className="data-point afford">
         <label>You could afford</label>
         <p>{afford.toLocaleString('en-US', { currency: 'USD', style: 'currency' })}</p>
+
+        <label>Closing Costs</label>
+        <p>
+          {closingCostMin.toLocaleString('en-US', { currency: 'USD', style: 'currency' })} -{' '}
+          {closingCostMax.toLocaleString('en-US', { currency: 'USD', style: 'currency' })}
+        </p>
       </div>
     </div>
   );
