@@ -24,16 +24,18 @@ const Loan = ({ downpayment, loan }) => {
 
   return (
     <div className={`loan${isDownpaymentValid ? '' : ' invalid'}`}>
-      <h2>{label}</h2>
+      <div className="header">
+        <h2>{label}</h2>
 
-      {id !== 'conforming' && (
-        <a
-          href="https://www.fhfa.gov/DataTools/Downloads/Documents/Conforming-Loan-Limits/FullCountyLoanLimitList2020_HERA-BASED_FINAL_FLAT.xlsx"
-          rel="noopener noreferrer"
-        >
-          (Available only in some counties)
-        </a>
-      )}
+        {id !== 'conforming' && (
+          <a
+            href="https://www.fhfa.gov/DataTools/Downloads/Documents/Conforming-Loan-Limits/FullCountyLoanLimitList2020_HERA-BASED_FINAL_FLAT.xlsx"
+            rel="noopener noreferrer"
+          >
+            (Available only in some counties)
+          </a>
+        )}
+      </div>
 
       <div className="data-point limit">
         <label>Loan Limit</label>
@@ -54,8 +56,12 @@ const Loan = ({ downpayment, loan }) => {
       <div className="data-point afford">
         <label>You could afford</label>
         <p>{afford.toLocaleString('en-US', { currency: 'USD', style: 'currency' })}</p>
+      </div>
 
-        <label>Closing Costs</label>
+      <hr />
+
+      <div className="data-point small">
+        <label>Estimated Closing Costs</label>
         <p>
           {closingCostMin.toLocaleString('en-US', { currency: 'USD', style: 'currency' })} -{' '}
           {closingCostMax.toLocaleString('en-US', { currency: 'USD', style: 'currency' })}

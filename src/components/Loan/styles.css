@@ -8,17 +8,28 @@
   flex-direction: column;
   margin: 10px;
   min-width: 350px;
-  padding: 15px 15px 0px;
+  padding: 0 15px;
   transition: all 0.3s ease-out;
 }
 
+.loan .header {
+  align-items: center;
+  background: #a2e2ff;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 0 0 10px;
+  width: 100%;
+}
+
 .loan h2 {
+  color: #424242;
   font-size: 1.5em;
   margin: 0 0 25px;
 }
 
 .loan a {
-  color: #1b95e0;
+  color: #136190;
   font-size: 0.8rem;
   margin: -20px 0 5px;
   text-decoration: none;
@@ -28,7 +39,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0 0 10px;
+  margin: 10px 0;
 }
 
 .loan .data-point label {
@@ -50,10 +61,26 @@
   margin: -15px 0 15px;
 }
 
-.loan.invalid {
-  background: #ffb9b9;
-}
-
 .loan.invalid .data-point.downpayment label {
   color: #d02e2e;
+}
+
+.loan.invalid .data-point.downpayment p {
+  color: #d02e2e;
+}
+
+.loan hr {
+  background: #777777;
+  border: none;
+  margin: 0 0 20px;
+  height: 1px;
+  width: 80%;
+}
+
+.loan .data-point.small label {
+  font-size: 0.8em;
+}
+
+.loan .data-point.small p {
+  font-size: 1em;
 }
