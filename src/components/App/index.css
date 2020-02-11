@@ -1,0 +1,65 @@
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 5em;
+  font-weight: 500;
+  margin: 0 0 100px;
+  text-align: center;
+}
+
+.field-group {
+  animation: fadeIn 2s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+label {
+  color: #555555;
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+input {
+  border: none;
+  font-size: 4em;
+  font-weight: bold;
+  outline: none;
+  text-align: center;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #6464ff;
+  font-size: 1em;
+  text-align: center;
+}
+
+.loans {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0 0;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.app.show-all label {
+  font-size: 1em;
+}
+
+.app.show-all input {
+  font-size: 2em;
+}
+
+.app.show-all h1 {
+  font-size: 2em;
+  margin: 0 0 50px;
+}

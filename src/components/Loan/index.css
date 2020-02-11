@@ -1,0 +1,55 @@
+.loan {
+  align-items: center;
+  background: #eaeaea;
+  border: 1px solid #d8d8d8;
+  padding: 15px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+}
+
+.loan h2 {
+  font-size: 1.5em;
+  margin: 0 0 25px;
+}
+
+.loan a {
+  color: #0e6dff;
+  font-size: 0.8rem;
+  margin: -20px 0 5px;
+  text-decoration: none;
+}
+
+.loan .data-point {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10px;
+}
+
+.loan .data-point label {
+  color: #555555;
+  font-size: 1em;
+  margin: 0 0 5px;
+}
+
+.loan .data-point p {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.loan .data-point p.small {
+  font-size: 0.8em;
+  font-weight: normal;
+  margin: -15px 0 15px;
+}
+
+.loan.invalid {
+  background: #ffcbcb;
+}
+
+.loan.invalid .data-point.downpayment label {
+  color: #d02e2e;
+}

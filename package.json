@@ -1,20 +1,31 @@
 {
   "name": "mortgage-calculator",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1"
-  },
+  "private": false,
+  "license": "MIT",
   "scripts": {
+    "build": "react-scripts build && yarn build:compress",
+    "build:compress": "gzip -r -k -1 build",
+    "build:convert-media": "cd build/static/media && for file in *; do cwebp $file -q 80 -o \"${file%.*}.webp\"; done;",
+    "deploy": "node scripts/deploy.js",
+    "eject": "react-scripts eject",
+    "lint": "eslint src -c .eslintrc --ext js,jsx",
+    "lint:fix": "eslint src -c .eslintrc --fix --ext js,jsx",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "version-bump:major": "yarn version --major && git push origin production --follow-tags",
+    "version-bump:minor": "yarn version --minor && git push origin production --follow-tags",
+    "version-bump:patch": "yarn version --patch && git push origin production --follow-tags"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +41,43 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.12.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-redux-saga": "^0.9.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lint-staged": "^10.0.7",
+    "ora": "^4.0.3",
+    "prettier": "^1.19.1",
+    "yarn-run-all": "^3.1.1"
   }
 }
